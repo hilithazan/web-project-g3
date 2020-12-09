@@ -1,0 +1,74 @@
+
+.nav { grid-area: nav; background-color: green; color: white;}
+.header { grid-area: header; background-color: blue; color: white; }
+.bar { grid-area: bar; background-color: red; color: white;}
+.line1 { grid-area: line1; background-color: lavender; text-align: left; color: white; }
+.line2 { grid-area: line2; background-color: lightblue; text-align: left; color: white; }
+.line3 { grid-area: line3; background-color: brown; text-align: left; color: white; }
+.line4 { grid-area: line4; background-color: palegoldenrod; text-align: left; color: white; }
+.line5 { grid-area: line5; background-color: wheat; text-align: left; color: white; }
+.footer { grid-area: footer; background-color: pink; color: white;}
+.mainL { grid-area: mainL; background-color: cadetblue; text-align: left; color: white;}
+.mainC { grid-area: mainC; background-color: aliceblue; text-align: left; color: white;}
+.mainR { grid-area: mainR; background-color: unset; text-align: left; color: white;}
+.boxL { grid-area: boxL; background-color: navajowhite; text-align: left; color: white;}
+.boxR { grid-area: boxR; background-color: violet; text-align: left; color: white;}
+
+.grid-container1 {
+    display: grid;
+    grid-template-areas: 
+    'bar nav nav nav'
+    'bar header header header'
+    'bar line1 line1 line1'
+    'bar line2 line2 line2'
+    'bar line3 line3 line3'
+    'bar line4 line4 line4'
+    'bar line5 line5 line5'
+    'bar footer footer footer'
+    ;
+    grid-template-columns: 15vh 20vh 20vh;
+    grid-gap: 5vh;
+    padding: 2vh;
+}
+
+.grid-container2 {
+    display: grid;
+    grid-template-areas: 
+    'bar nav nav nav'
+    'bar header header header'
+    'bar mainL mainC mainR'
+    'bar mainL mainC mainR'
+    'bar mainL mainC mainR'
+    'bar mainL mainC mainR'
+    'bar mainL mainC mainR'
+    'bar footer footer footer'
+    ;
+    grid-template-columns: 15vh 20vh 20vh;
+    grid-gap: 5vh;
+    padding: 2vh;
+}
+
+.grid-container3 {
+    display: grid;
+    grid-template-areas: 
+    'bar nav nav nav'
+    'bar header header header'
+    'bar boxL boxR boxR'
+    'bar boxL boxR boxR'
+    'bar boxL boxR boxR'
+    'bar boxL boxR boxR'
+    'bar boxL boxR boxR'
+    'bar footer footer footer'
+    ;
+    grid-template-columns: 15vh 20vh 20vh;
+    grid-gap: 5vh;
+    padding: 2vh;
+}
+
+body{
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+}
