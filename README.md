@@ -1,6 +1,6 @@
 # web-project-g3
 pages order:
-1) main page- May+Hilit
+1) main page-
 2) log in form page
 3) register form file
 4) my shop- 3 pages cakes, cockies, packs. 'my shop' is not a page- only lis of the 3 pages. all 3 has same styling with CSS page
@@ -15,3 +15,6 @@ pages order:
 *** update your name next to the page you work on
 *** update "finish" when the page is finished
 *** update here+ whatsapp when you open new CSS/JS page
+
+CSS Pages:
+1) main page
