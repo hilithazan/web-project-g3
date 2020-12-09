@@ -11,6 +11,7 @@ pages order:
 9) sweet customers- pictures, articles etc...
 10) about me
 11) footer pages- general text, links to facebook, instergram, tiktok...
+12) specific cookie pages
 
 *** update your name next to the page you work on
 *** update "finish" when the page is finished
