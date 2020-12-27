@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+    <head>
+        <title>אירועים</title>
+        <link rel="stylesheet" href="styleSheet.css">
+        <script type="text/javascript" src="JS_Functions.js"></script>  
+    </head>
+    <body>
+        <div class="grid-container-events">
+
+            <div class="header">
+                <h2 id="header" onmouseover="headerOver('header')" onmouseout="headerOut('header')">אירועים</h2>
+            </div>        
+            
+            <div class="eventL">
+                <p class="eventP">בת מצווה</p>
+                <div id="event1" class="events" onmouseover="eventOver('img1')" onmouseout="eventOut('img1')">
+                    <img id="img1" class="eventL" src="event_pink.jpg" alt="This is an image of event1" width="300" height="200" style="border-radius: 20%;"></a>
+                </div><br>
+                <div class="eventL">
+                    <p class="eventP">חתונה</p>
+                    <div id="event3" class="events" onmouseover="eventOver('img3')" onmouseout="eventOut('img3')">
+                        <img id="img3" class="eventL" src="event_wedding.jpg" alt="This is an image of event3" width="300" height="200" style="border-radius: 20%;"></a>
+                    </div><br>
+                </div>
+            </div>
+
+            <div class="eventC" style="font-size: 25px;">
+                <form style="line-height: 35px;" action="/todo" method="POST">
+                    <h1>לקביעת אירוע</h1>
+                    <label for=picklist>סוג האירוע</label><br>
+                    <select class="inputEvent" name="optionsEvent" id="IDEvent" dir="rtl">
+                        <option value = "0" style="text-align: right">בחר</option>
+                        <option value = "1">בר/בת מצווה</option>
+                        <option value = "2">ברית</option>
+                        <option value = "3">חתונה</option>
+                        <option value = "4">יום הולדת</option>
+                        <option value = "5">מסיבת רווקות/ים</option>
+                        <option value = "6">אחר</option>
+                    </select><br><br>
+                    <label for="FirstName">שם מלא</label><br>
+                    <input class="inputEvent inputWid" type="text" id="privateName" name="FirstName" onblur="checkName('privateName')"><br>
+                    <label for=Gender></label>
+                    <label for=Male>זכר</label>
+                    <input type="radio" id="Male" name="Gender">
+                    <label for=Female>נקבה</label>
+                    <input type="radio" id="Female" name="Gender"><br>
+                    <label for=Email>מייל</label><br>
+                    <input class="inputEvent inputWid" type="email" id="userEmail" name="Email" style="text-align: left;" onblur="checkEmail('userEmail')"><br>
+                    <label for=Phone>טלפון</label><br>
+                    <input class="inputEvent inputWid" type="tel" id="Phone" onblur="checkPhone(id)" name="Phone" pattern="[0-9]{3}-[0-9]{7}"><br>
+                    <label for="Comment">הערות</label><br>
+                    <textarea id="Comment" name="Comment" class="inputEvent" maxlength="500" rows="5" style="width: 48vh;"></textarea><br><br>
+                    <label for="submit"></label>
+                    <p id="submit"></p>
+                    <button class="buttonPay" type="button" onclick="submitEvent()">שלח</button><br><br>
+                </form>
+            </div>
+
+            <div class="eventR">
+                <p class="eventP">ברית</p>
+                <div id="event2" class="events" onmouseover="eventOver('img2')" onmouseout="eventOut('img2')">
+                    <img id="img2" class="eventR" src="event_blue.jpg" alt="This is an image of event2" width="300" height="200" style="border-radius: 20%;"></a>
+                </div><br>
+                <div class="eventR">
+                    <p class="eventP">מסיבת רווקות</p>
+                    <div id="event4" class="events" onmouseover="eventOver('img4')" onmouseout="eventOut('img4')">
+                        <img id="img4" class="eventR" src="event_bachelorrete.jpg" alt="This is an image of event4" width="300" height="200" style="border-radius: 20%;"></a>
+                    </div><br>
+                </div>
+            </div>  
+
+            <div class="nav" style="z-index: 9999;">
+                <img id="cookie" src="cookieHeader.jpg" alt="cookie image" height="70px" >
+                <a href="ContactPage.html"><span class="contactMe"><p class="lables">צור קשר</p></span></a>
+                <a href="recommendationsPage.html"><span class="customers"><p class="lables">לקוחות מתוקים</p></span></a>
+                <a href="BakeWithMe_Page.html"><span class="bakeWithMe"><p class="lables">אופים איתי</p></span></a>
+                <a href="eventsPage.html"><span class="events"><p class="lables"> אירועים</p></span></a>
+
+                <div class="dropdown">
+                    <p onclick="dropDownList()" class="dropbtn aboutMe">החנות שלי</p>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="cookiesShop.html">עוגיות</a>
+                      <a href="cakeShop.html">עוגות</a>
+                      <a href="packageShop.html">מארזים</a>
+                    </div>
+                </div>
+
+                <a href="about_me.html"><span class="lables aboutMe"><p class="lables">?מי אני</p></span></a>
+                <a href="mainPage.html"><span class="lables main"><p class="lables">ראשי</p></span></a>
+                <img id="cookie" src="cookieHeader.jpg" alt="cookie image" width="70px">
+            </div>
+
+            <div class="bar" style="position: fixed;">
+                <img class="curPointer" id="myBtn" src="login.png"alt= "login symbol" width="50vh" onclick="onclickFunc()"
+                onload="showUserNameFunc('showUserName')">
+                <a>
+                    <button class="dispNone" id="logoutBtn" type="button" value="logout" style="width: 15vh;"
+                    onclick="logoutFunc('logoutBtn','showUserName')">התנתק</button>
+                </a>
+                <b><p id="showUserName" style="color:whitesmoke;"></p></b>
+                <!-- Trigger/Open The Modal -->
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close" onlick="onclickSpan()"></span>
+                        <form class="loginForm" method="POST">
+                            <button type="button" value="close" onclick="closeWindow()" style="float:right;"><b>X</b></button><br>
+                            <h2 style="font-size: 4vh;">התחברות לאתר</h2>
+                            <input type="text" id="userName" name="userName" placeholder="שם משתמש" style="width: 30vh;  text-align: right; height: 3vh;margin-bottom: 0.8vh;"><br>
+                            <input type="password" id="pass" name="password" placeholder="סיסמה" style="width: 30vh; text-align: right; height: 3vh;"><br>
+                            <p>הצג סיסמה
+                            <input type="checkbox" onclick="hidePassword()">
+                            </p>
+                            <br><a id="registerLink">
+                                <button type="button" value="register"
+                                    onclick="OpenRegisterForm('registerLink')">הרשמה</button>
+                            </a>
+                            <a id="loginLink">
+                                <button type="button" value="login"
+                                    onclick="CheckForm('userName','pass','showUserName')">התחבר
+                                </button>
+                            </a>
+                        </form><br>
+                        <p class="curPointer" onclick="forgotPass()"
+                            style="background-color: rgb(116, 63, 116); width: 25vh; text-align: center; display: inline-block;
+                            font-size: 3vh; width: auto; padding: 0vh 2vh 0.5vh 2vh;">שכחתי סיסמא</p>
+                    </div>
+                </div>
+                <script>
+                    // popup window
+                    var modal = document.getElementById("myModal");
+                    var btn = document.getElementById("myBtn");
+                    var span = document.getElementsByClassName("close")[0];
+                    function onclickFunc() {modal.style.display = "block";}
+                    function onclickSpan() {modal.style.display = "none";}
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                        modal.style.display = "none";
+                        }
+                    }
+                </script>
+                
+                <a href="wishlistPage.html" style="font-size: 5vh;">❤️</a>
+                <br><br>
+                <a href="ShopCartPage.html"><img src="cart.png"alt= "cart symbol" width="50vh"></a>
+            </div>
+
+            <div class="footer" >
+                <div class="socialMedia">
+                    <a href="https://www.instagram.com/illusion_bakery/"><img src="instegramSymbol.jpeg"
+                    alt= "image of instegram symbol" width="50vh" style="margin-right: 2vh; border: 0.05vh solid black; border-radius: 20%;;" ></a>
+                    <a href="https://www.facebook.com/adi.iluz.5"><img src="facebookSymbol.jpeg"
+                    alt= "image of instegram symbol" width="50vh" style="margin-right: 2vh; border: 0.05vh solid black; border-radius: 20%;"></a>
+                    <a href="https://www.tiktok.com/@illusionbakery"><img src="tiktokSymbol.jpeg"
+                    alt= "image of instegram symbol" width="50vh" style="border: 0.05vh solid black; border-radius: 20%;"></a>
+                </div>
+
+                <a id="mapPage"><span class="footerLable"><p id="mapP" onclick="goToPage('mapPage','mapPage.html')"
+                    onmouseover="changePointer('mapP','pointer');" onmouseout="changePointer('mapP','default');">דרכי הגעה</p></span></a>
+
+                <a id="privacyPage"><span class="footerLable"><p id="privacyP" onclick="goToPage('privacyPage','privacyPage.html')"
+                    onmouseover="changePointer('privacyP','pointer');" onmouseout="changePointer('privacyP','default');">מדיניות פרטיות</p></span></a>
+
+                <a id="deliveryPage"><span class="footerLable"><p id="deliveryP" onclick="goToPage('deliveryPage','deliveryPage.html')"
+                    onmouseover="changePointer('deliveryP','pointer');" onmouseout="changePointer('deliveryP','default');">מדיניות משלוחים</p></span></a>
+
+                <a id="cancelPage"><span class="footerLable"><p  id="cancelP" onclick="goToPage('cancelPage','cancelPage.html')"
+                    onmouseover="changePointer('cancelP','pointer');" onmouseout="changePointer('cancelP','default');">מדיניות ביטולים</p></span></a>
+
+                <a id="policyPage"><span class="footerLable"><p id="policyP" onclick="goToPage('policyPage','policyPage.html')"
+                    onmouseover="changePointer('policyP','pointer');" onmouseout="changePointer('policyP','default');">תקנון האתר</p></span></a>
+            </div>
+
+
+            </div>
+        </div>       
+    </body>
+</html>
+
+        

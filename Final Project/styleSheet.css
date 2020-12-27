@@ -1,0 +1,847 @@
+/* ------------------------------------CLASSES FOR DIVES IN ALL THE PAGES--------------------------------------------------- */
+/* the upper label - switch to other pages */
+.nav { grid-area: nav; 
+    background-color: rgb(195, 3, 138);
+    display:flex; 
+    justify-content: space-between;
+    box-shadow: 0px 1vh 3vh 0px rgba(0,0,0,0.5);
+    text-align: center;
+    top: 0;
+    position: sticky;
+    color: white;
+    height: 70px;
+}
+.header { grid-area: header; background-color: rgb(210, 162, 216); color: white; text-align: center;}
+/* left side bar - register, wishlist, cart */
+.bar { 
+  grid-area: bar; 
+  background-color:rgb(195, 3, 138); 
+  color: white; 
+  text-align: center;
+  padding: 2vh;
+  max-width: 14vh;
+  box-shadow: 0px 1vh 3vh 0px rgba(0,0,0,0.5);
+}
+/*  lines: the main divs in the main page - one after the other */
+/*  only line1: also in the footer pages (policy page etc.)*/
+.line1 { grid-area: line1;  text-align:center; color: black; font-size: 1vw;}
+.line2 { grid-area: line2; background-color: rgb(210, 162, 216); text-align: center; color: white; }
+.line3 { grid-area: line3;  text-align:center; color: black; font-size: 1vw;}
+.line4 { grid-area: line4; background-color: rgb(210, 162, 216); text-align: center; color: white; }
+.line5 { grid-area: line5;  text-align:center; color: black; font-size: 1vw;}
+.footer { grid-area: footer; background-color: pink; color: white;
+    display:flex; justify-content: space-between; text-align: center; height: 70px ; padding: 1vh 3vh 1vh 3vh}
+
+
+/*hover*/
+/*.line1:hover{border-radius: 10%; border-style: solid; border-color: rgba(245, 156, 230, 0.699) }
+.line2:hover{border-radius: 10%; border-style: solid; border-color: rgba(215, 192, 216, 0.699) }
+.line3:hover{border-radius: 10%; border-style: solid; border-color: rgba(215, 192, 216, 0.699) }
+.line4:hover{border-radius: 10%; border-style: solid; border-color: rgba(215, 192, 216, 0.699) }
+.line5:hover{border-radius: 10%; border-style: solid; border-color: rgba(215, 192, 216, 0.699) }*/
+
+/*violet color*/
+/*rgba(75, 27, 82, 0.664)*/
+
+/* for the shopping pages - cookie shop, cake shop and package shop */
+.mainL {grid-area: mainL;}
+.mainC {grid-area: mainC;}
+.mainR {grid-area: mainR;}
+.search {grid-area: search;}
+
+/* for the events page */
+.eventL {grid-area: eventL;}
+.eventC {grid-area: eventC; text-align: center;}
+.eventR {grid-area: eventR;}
+
+/* for the product page (1 cookie/1cake..) */
+.boxL { grid-area: boxL; text-align: center; color: white; margin-left: center; margin-right: center}
+.boxR { grid-area: boxR; background-color: rgb(231, 202, 235); text-align: center; color: black; border-style: solid; border-color: rgba(245, 156, 230, 0.699)}
+.boxR:hover{color:white; border-radius: 10%; border-style: solid; border-color: rgba(75, 27, 82, 0.664); background-color: rgba(75, 27, 82, 0.664)}
+
+
+/* for the recommendations page (the people) */
+.recommLeft{grid-area: recommLeft;}
+.recommCenter{grid-area: recommCenter;}
+.recommRight{grid-area: recommRight;}
+
+/* for the BakeWithMe page */
+.recpiePlace1{grid-area: recpiePlace1;}
+.recpiePlace2{grid-area: recpiePlace2;}
+.imageRecipe{grid-area: imageRecipe;}
+
+/* for the contact page */
+.textInfo{grid-area: textInfo;}
+
+/* for the cart page */
+.detail{grid-area: detail;}
+.photo{grid-area: photo;}
+
+/* for the map page */
+.mapa{grid-area: mapa;}
+.ways{grid-area: ways;}
+
+
+/* -------------------------------------------CLASSES IN ALL THE PAGES-------------------------------------------------- */
+/* BE CAREFUL! with changing the HTML tag */
+html{
+    background-color: var(--mainBackground);
+    /*background-image: url("bg_cookie1.jpg");*/
+    font-family: MPLUSRounded;
+}
+
+/* BE CAREFUL! with changing the body */
+body{
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+/* the link tag - without underline*/
+a{
+  text-decoration: none;
+  color: black;
+}
+
+/* fonts */
+@font-face{
+  font-family: MPLUSRounded;
+  src: url(MPLUSRounded1c-Regular.ttf);
+}
+@font-face{
+  font-family: MPLUSRounded1c-Bold;
+  src: url(MPLUSRounded1c-Bold.ttf);
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+/* define colors to use everywhere we want */
+:root{
+  --mainBackground:rgb(231, 202, 235);
+  --cookieBackground:rgb(221, 162, 205);
+}
+
+/*text-shadow:-1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;*/
+
+/* hide or display element class*/
+.dispNone{
+  display: none;
+}
+.dispBlock {
+  display: block;
+}
+.dispInlineBlock{
+  display: inline-block;
+}
+
+/*Glowing font in Main Page*/
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.mainShop {
+  color: black;
+  border-radius: 25px;
+  border: 2px solid rgb(195, 3, 138);;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  display: inline-block;
+  background-color:  rgb(221, 162, 205);
+  font-size: 1.5vw;
+}
+
+/* ----------------------------------------------------------GRIDS FOR ALL PAGES----------------------------------------------------------- */
+
+.grid-container-main {
+    display: grid;
+    grid-template-areas: 
+    'bar nav nav nav'
+    'bar header header header'
+    'bar line1 line1 line1'
+    'bar line2 line2 line2'
+    'bar line3 line3 line3'
+    'bar line4 line4 line4'
+    'bar line5 line5 line5'
+    'bar footer footer footer'
+    ;
+    grid-template-columns: 15vh 20vh 20vh;
+    grid-gap: 5vh;
+    padding: 2vh;
+}
+
+/* grid for all the shop's pages (cookie,cake and package) */
+.grid-container-shop {
+    display: grid;
+    grid-template-areas: 
+    'bar nav nav nav'
+    'bar header header header'
+    'bar search search search'
+    'bar mainL mainC mainR'
+    'bar mainL mainC mainR'
+    'bar mainL mainC mainR'
+    'bar mainL mainC mainR'
+    'bar mainL mainC mainR'
+    'bar footer footer footer'
+    ;
+    grid-template-columns: 15vh;
+    grid-gap: 5vh;
+    padding: 2vh;
+}
+
+/* grid for about me page */
+.grid-container-aboutMe {
+    display: grid;
+    grid-template-areas: 
+    'bar nav nav nav'
+    'bar header header header'
+    'bar boxL boxR boxR'
+    'bar boxL boxR boxR'
+    'bar boxL boxR boxR'
+    'bar boxL boxR boxR'
+    'bar boxL boxR boxR'
+    'bar footer footer footer'
+    ;
+    grid-template-columns: 15vh 60vh 20vh;
+    grid-gap: 5vh;
+    padding: 2vh;
+    text-align: center;
+    ;
+}
+
+/* grid for events page */
+.grid-container-events {
+  display: grid;
+  grid-template-areas: 
+  'bar nav nav nav'
+  'bar header header header'
+  'bar eventL eventC eventR'
+  'bar eventL eventC eventR'
+  'bar eventL eventC eventR'
+  'bar eventL eventC eventR'
+  'bar footer footer footer'
+  ;
+  grid-template-columns: 15vh 60vh 50vh 60vh;
+    grid-gap: 5vh;
+  padding: 2vh;
+  text-align: center;
+  ;
+}
+
+/* grid for single product page */
+.grid-container-product {
+    display: grid;
+    grid-template-areas: 
+    'bar nav nav nav nav'
+    'bar boxL boxL boxR boxR '
+    'bar boxL boxL boxR boxR '
+    'bar boxL boxL boxR boxR '
+    'bar boxL boxL boxR boxR '
+    'bar boxL boxL boxR boxR '
+    'bar footer footer footer footer'
+    ;
+    grid-template-columns: 15vh 60vh 20vh 20vh;
+    grid-gap: 5vh;
+    padding: 2vh;
+    text-align: center;
+}
+
+/* grid for recommendations page with the people */
+.grid-container-recommend{
+  display: grid;
+  grid-template-areas: 
+  'bar nav nav nav'
+  'bar header header header'
+  'bar recommLeft recommCenter recommRight'
+  'bar footer footer footer'
+  ;
+  grid-template-columns: 15vh;
+  grid-gap: 5vh;
+  padding: 2vh;
+}
+
+/* grid for the footer pages - like policy, cancalation etc */
+.grid-container-footer {
+  display: grid;
+  grid-template-areas: 
+  'bar nav nav nav'
+  'bar line1 line1 line1'
+  'bar line1 line1 line1'
+  'bar line1 line1 line1'
+  'bar line1 line1 line1'
+  'bar line1 line1 line1'
+  'bar footer footer footer'
+  ;
+  grid-template-columns: 15vh 20vh 20vh;
+  grid-gap: 5vh;
+  padding: 2vh;
+}
+
+/* grid for bake with me page */
+.grid-container-bakeWithMe{
+  display: grid;
+  grid-template-areas: 
+  'bar nav nav nav'
+  'bar header header header'
+  'bar imageRecipe recpiePlace2 recpiePlace1'
+  'bar footer footer footer'
+  ;
+  grid-template-columns: 15vh 59vh 59vh;
+  grid-gap: 5vh;
+  padding: 2vh;
+}
+
+/* grid for bake Contact page */
+.grid-container-Contact{
+  display: grid;
+  grid-template-areas: 
+  'bar nav nav nav'
+  'bar header header header'
+  'bar textInfo textInfo textInfo'
+  'bar footer footer footer'
+  ;
+  grid-template-columns: 15vh;
+  grid-gap: 5vh;
+  padding: 2vh;
+}
+
+.grid-container-cart {
+  display: grid;
+  grid-template-areas: 
+  'bar nav nav nav'
+  'bar header header header'
+  'bar detail detail detail'
+  'bar detail detail detail'
+  'bar detail detail detail'
+  'bar footer footer footer'
+  ;
+  grid-template-columns: 15vh 20vh 20vh;
+  grid-gap: 5vh;
+  padding: 2vh;
+}
+
+.grid-container-map {
+  display: grid;
+  grid-template-areas: 
+  'bar nav nav nav'
+  'bar header header header'
+  'bar mapa mapa ways'
+  'bar mapa mapa ways'
+  'bar mapa mapa ways'
+  'bar footer footer footer'
+  ;
+  grid-template-columns: 15vh 50vh 20vh;
+  grid-gap: 5vh;
+  padding: 2vh;
+}
+
+
+/* -----------------------------------------------------------FOOTER-------------------------------------------------------------*/
+
+.socialMedia{
+  margin-top: 10px;
+}
+
+.footerLable{
+  font-size: 20px;
+}
+
+/* -----------------------------------------------------ABOUT ME PAGE -----------------------------------------------------------*/
+.aboutMe{
+  font-size: 20px;
+  line-height: 40px;
+}
+
+/* -----------------------------------------------------RECOMMENDATION PAGE -----------------------------------------------------------*/
+/* class in recommendation page, the box for each recommendation. */
+.people{
+    background-color: var(--cookieBackground);
+    color: white;
+    line-height: 100%;
+    border: 0.1vh solid #ccc;
+    padding: 1vh;
+}
+
+/* class in recommendation page, the picture in the box. */
+.peoplePicture{
+  height: 40vh;
+  width: 40vh;
+  border: 0.005vh solid #ccc;
+  background: #eee;
+  margin: auto;
+  padding: 0.2vh 0.2vh;
+  border-radius:5%;
+}
+
+/* class in recommendation page, the text under the picture in the box. */
+.peopleText{
+  border: 0.005vh solid #ccc;
+  background: rgb(206,141,190);
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-right: 1vh;
+  padding-left: 1vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
+  font-size: 2.5vh;
+  line-height: 3vh;
+}
+
+.pPeople{
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+/* -----------------------------------------------------Bake With Me PAGE -----------------------------------------------------------*/
+/* class in Bake With Me page */
+.recpiePlace1, .recpiePlace2{
+  color: black;
+  line-height: 100%;
+  padding: 1vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+
+.imageRecipe{
+  text-align: center;
+  width: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.recpieText{
+  text-align: right;
+}
+
+.collapsible {
+  background-color: rgb(206, 141, 190);
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: right;
+  outline: none;
+  font-size: 3vh;
+  font-family: MPLUSRounded;
+}
+
+.active, .collapsible:hover {
+  background-color: rgb(195, 3, 138);
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  text-align: right;
+  line-height: 4vh;
+  transition: 0.2s ease-out;
+  background-color: rgb(229, 192, 220);
+  color: black
+}
+/* -----------------------------------------------------PAY PAGE ----------------------------------------------------------- */
+.payInput{
+  font-size: 15px;
+  color: rgba(77, 81, 87, 1);
+  width: 15%;
+  padding: 3px 3px 3px 3px;
+  border: 1px solid #ccc;
+  border-radius: 0.5vh;
+  box-sizing: border-box;
+  resize: vertical;
+  margin-bottom: 0.5vh;
+  text-align: right;
+  font-family: MPLUSRounded;
+}
+
+.buttonPay{
+  background-color: white;
+  cursor: pointer;
+  height: 30px;; border-color:black;
+  padding: 0px 10px 45px 10px;
+  border-radius: 5%;
+  font-size: 30px;
+  font-family: MPLUSRounded;
+}
+
+/* -----------------------------------------------------contact PAGE -----------------------------------------------------------*/
+.textInfo{
+  color: purple;
+  line-height: 100%;
+  padding: 1vh;
+  text-align: center;
+  min-width: 160vh;
+  background-image: url("bg_cookie.png");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+
+.input:hover{
+  border-color:black;
+  border-style: solid;
+}
+
+.input{
+  font-size: 3vh;
+  color: rgba(77, 81, 87, 1);
+  width: 50%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 0.5vh;
+  box-sizing: border-box;
+  resize: vertical;
+  margin-bottom: 0.5vh;
+  text-align: center;
+  font-family: MPLUSRounded;
+}
+
+.FormDetails {
+  font-size: 3vh;
+  color: purple;
+  
+}
+
+/* -----------------------------------------------SHOP PAGES ---------------------------------------------------------------------*/
+/* class in shop page, the box for each product. it's in cookie shop, cake shop and package shop */
+.cookies{
+    background-color: var(--cookieBackground);
+    color: white;
+    line-height: 40%;
+    border: 0.1vh solid #ccc;
+}
+
+/* class in shop page, the picture in the box of the product. */
+.shopPicture{
+    height: 30vh;
+    width: 30vh;
+    border: 0.005vh solid #ccc;
+    background: #eee;
+    margin: auto;
+    padding: 0.5vh 0.5vh;
+    border-radius:50%;
+}
+
+/* class in shop page, for the pictures of the little cookies to know how tasty the product ("MAD SHHITUT"). */
+.cookieScale{
+    padding-bottom: 2vh;
+    width: 4vh;
+}
+
+
+/* --------------------------------------------------PRODUCT PAGES ------------------------------------------------------------------*/
+/* class in product page, for the pictures of the products. */
+.productImage{
+    height: 50vh;
+    width: 50vh;
+    border: 0.005vh solid #ccc;
+    background: #eee;
+    margin: auto;
+    padding: 0.5vh 0.5vh;
+    border-radius:50%;
+}
+
+.productText{
+  font-size: 3vh;
+}
+
+.productCookieScale{
+  width: 4vh;
+}
+
+.backToShop{
+  text-align: center;
+  font-size: 3vh;
+  background-color: rgb(209, 115, 209);
+  max-width: 17vh;
+  border: 0.005vh solid black;
+}
+
+/* -----------------------------------------------EVENTS PAGE ---------------------------------------------------------------------*/
+/* class in events page, the box for each event.*/
+.inputEvent{
+  color: black;
+  line-height: 100%;
+  border: 0.1vh solid #ccc;
+  padding: 1vh;
+  text-align: right;
+}
+
+.inputWid{
+  height: 4vh;
+  width: 48vh;
+}
+
+.eventP{
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+/* ----------------------------------------THE DROP DOWN LIST IN THE NAV - FOR THE DIFFERENT SHOPS ------------------------------------*/
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    line-height:30px;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus, .lables:hover, .lables:focus {
+    background-color: rgb(231, 163, 226);
+    border-radius: 10%;
+  }
+
+  .lables{
+    font-size: 20px;
+    line-height:30px;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    text-align: center;
+    min-width: 10vh;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 0.6vh 2vh;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd}
+  
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/*--------------------------------------------------------FOR MAIN PAGE: ---------------------------------------------------------*/
+/* ---------- POP UP WINDOW FOR LOGIN------------*/
+/* the "form" tag for the login */
+.loginForm {
+    text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: rgb(209, 115, 209);
+  margin: auto;
+  padding: 20px;
+  border: 0.5vh solid white;
+  width: 40%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* changes cursor to pointer */
+.curPointer {
+    cursor: pointer;
+}
+
+/*--------------------------------------------------------FOR CART PAGE: ---------------------------------------------------------*/
+
+#quantity {
+  padding: 5px;
+  width: 35px;
+  border: 1px solid #555;
+}
+
+#totalAmount {
+  text-align: center;
+  background-color: rgb(173, 159, 159);
+  font-weight: bold;
+  font-size: 5vh;
+}
+
+.cartPicture{
+  height: 17vh;
+  width: 17vh;
+  border: 0.005vh solid #ccc;
+  background: #eee;
+  margin: auto;
+  padding: 0.5vh 0.5vh;
+  border-radius:50%;
+}
+
+td{
+  font-size: 18px;
+}
+
+th{
+  font-size: 22px;
+}
+
+/*--------------------------------------------------------FOR MAP PAGE: ---------------------------------------------------------*/
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+.ways {
+  text-align: right;
+  margin-right: 5vh;
+  font-size: 3vh;
+}
+
+.waysNavigation{
+  text-align: center; 
+}
+
+/*----------------* Rainbow Color: for some of the headers (cookie shop, recommendation page...) ----------------------*/
+.rainbow { 
+   /* Chrome, Safari, Opera */
+  -webkit-animation: rainbow 5s infinite; 
+  /* Internet Explorer */
+  -ms-animation: rainbow 5s infinite;
+  /* Standar Syntax */
+  animation: rainbow 5s infinite; 
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow{
+  0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+/* Internet Explorer */
+@-ms-keyframes rainbow{
+   0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+/* Standar Syntax */
+@keyframes rainbow{
+    0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+/*-------------------------עוגיה מתגלגלת-------------------*/
+.roll {
+  text-align: left;
+  position: relative;
+  animation: myfirst 1.25s linear;
+}
+@keyframes myfirst {
+  0%   {left: -500px; top:0px;}
+  10%   {left: -400px; top:0px;}
+  20%   {left: -300px; top:0px;}
+  30%   {left: -200px; top:0px;}
+  40%   {left: -100px; top:0px;}
+  50%   {left: 0px; top:0px;}
+  60%   {left: 100px; top:0px;}
+  70%   {left: 200px; top:0px;}
+  80%   {left: 300px; top:0px;}
+  90%   {left: 400px; top:0px;}
+  100%  {left: 500px; top:0px;}
+}
+
+#myProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: pink;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
+}
+
+.unScroll{
+  overflow: hidden; /* Hide scrollbars */
+}
+/*-----------------------------------------------------------*/

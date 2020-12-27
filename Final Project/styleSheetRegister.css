@@ -1,0 +1,95 @@
+:root{
+    --mainBack: rgb(231, 202, 235);
+}
+
+html{
+    height: 100vh;
+    font-family: MPLUSRounded;
+}
+
+body{
+    background-color:var(--mainBack);
+}
+
+.grid-container{
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+    grid-gap: 0vh;
+    margin: 0vh;
+}
+
+.header{
+    grid-area: header;
+    width: 100%;
+    border: none;
+    text-align: center;
+    font-family: MPLUSRounded;
+    font-size: 5vh;
+}
+
+.h1, .h2{
+    color: whitesmoke;
+}
+
+.main{
+    grid-area: main;
+    color: black;
+    line-height: 0vh;
+    padding: 0vh;
+    font-size: 3vh;
+}
+
+.footer{
+    grid-area: footer;
+    position: relative;
+    margin-top: 0vh;    
+    width: 100%;
+}
+
+.input{
+    font-size: 3vh;
+    color: rgb(87, 77, 86);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 0.5vh;
+    box-sizing: border-box;
+    resize: vertical;
+    margin-bottom: 0px;
+    text-align: right;
+    font-family: MPLUSRounded;
+    width: 420px;
+    border: 0.2vh solid purple;
+}
+
+.sumbitInput{
+    font-size: 3vh;
+    color: rgba(77, 81, 87, 1);
+    border-radius: 7%;
+    background-color: whitesmoke;
+    font-family: MPLUSRounded;
+    margin-top: 4vh;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.error {
+    display: inline-block;
+}
+
+@font-face{
+    font-family: MPLUSRounded;
+    src: url(MPLUSRounded1c-Regular.ttf);
+}
+
+@font-face{
+    font-family: MPLUSRounded1c-Bold;
+    src: url(MPLUSRounded1c-Bold.ttf);
+}
+

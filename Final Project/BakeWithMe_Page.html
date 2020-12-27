@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>Illusion Bakery - Bake with me</title>
+        <link rel="stylesheet" href="styleSheet.css">
+        <script type = "text/javascript" src="JS_Functions.js"></script>  
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body>
+
+        <div class="grid-container-bakeWithMe">
+            <div class="header">
+                <h2 id="header" onmouseover="headerOver('header')" onmouseout="headerOut('header')">אופים איתי</h2>
+            </div>
+        
+            
+            <!-- left -->
+            <div class="imageRecipe"><br>
+                <img id="pic1" src="honeyCake.png" style="border-radius:5%; border: 0.3vh solid whitesmoke;" alt="Cake image" width="250vh">
+            </div>
+            
+            <!-- center -->
+            <div class="recpiePlace2">
+                <p class="recpieText" style="text-align: center; font-weight: bold; font-size: 5vh;" > המתכון </p><hr>
+                
+                <button class="collapsible">מצרכים</button>
+                <div class="content" style="direction: rtl;"> 
+                    <ul>
+                        <li>כוס קמח</li>
+                        <li>שלוש וחצי כפות פודינג וניל</li>
+                        <li>שקית אבקת אפייה</li>
+                        <li>כפית קינמון
+                        <li>קורט מלח
+                        <li>שתי ביצים</li>
+                        <li>שתי כפות סוכר</li>
+                        <li>חצי כוס דבש</li>
+                        <li>שתי כפות לוטוס</li>
+                        <li>חצי כוס שמן</li>
+                        <li>שליש כוס שמנת מתוקה</li>
+                    </ul>
+                </div> 
+
+                <button class="collapsible">אופן ההכנה</button>
+                <div class="content">
+                    <p>מנפים את הקמח לקערה ומסיפים את הפדוינג, אבקת האפייה, הקינמון ומלח. 
+                        בקערה נפרדת מערבבים את הביצים והדבש יחד. 
+                        לאחר מכן מוסיפים את הלוטוס ומערבבים. מוסיפים לזה את השמנת ושאר היבשים.
+                        אופים כחצי שעה
+                        <br>אני הוספתי גלייז וניל לימוני:
+                        חצי כוס אבקת סוכר מנופה, 3 כפות שמנת מתוקה, חצי כפית תמצית וניל, מעט מיץ לימון. לערבב בכל ולשפוך על העוגה כשהיא חמה
+                        <br> ניתן להוסיף תוספות כמו: פקאן, שקדים, מייפל, לוטוס מומס ומה שאוהבים ומתאים. אני הוספתי חצי כוס שברי לוטוס
+                        <br><br>💕בתאבון ושנה טובה לכולם
+                    </p>
+                </div> 
+                
+                <button class="collapsible">סרטון הכנה</button>
+                <div class="content" style="text-align: center;">
+                    <p>
+                        <video muted width="220" height="140" controls > 
+                            <source id="video1" src="video1.mp4" type="video/mp4">
+                        </video> 
+                    </p>
+                </div>
+            </div>
+
+            <!-- right -->
+            <div class="recpiePlace1"><br>
+                <p class="glow" style="font-size: 5vh;">🍯עוגת דבש לוטוס</p><br><hr>
+                <p><h3 style="font-size: 4vh; text-decoration: underline;"> טיפ הזהב </h3>
+                    <div style="font-size: 3vh; line-height: initial;"> להוציא את העוגה קצת לפני שהיא מוכנה, זה מה שהופך אותה לחלומית</div>
+                </p>
+                
+            </div>
+
+            <script>
+                //Collapsible
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+    
+                for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", 
+                        function() {
+                            this.classList.toggle("active");
+                            var content = this.nextElementSibling;
+                            if (content.style.maxHeight){
+                                content.style.maxHeight = null;
+                            } 
+                            else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                            } 
+                        }
+                        );
+                }
+            </script>
+
+            
+                        <div class="nav" style="z-index: 9999;">
+                            <img id="cookie" src="cookieHeader.jpg" alt="cookie image" height="70px" >
+                            <a href="ContactPage.html"><span class="contactMe"><p class="lables">צור קשר</p></span></a>
+                            <a href="recommendationsPage.html"><span class="customers"><p class="lables">לקוחות מתוקים</p></span></a>
+                            <a href="BakeWithMe_Page.html"><span class="bakeWithMe"><p class="lables">אופים איתי</p></span></a>
+                            <a href="eventsPage.html"><span class="events"><p class="lables"> אירועים</p></span></a>
+            
+                            <div class="dropdown">
+                                <p onclick="dropDownList()" class="dropbtn aboutMe">החנות שלי</p>
+                                <div id="myDropdown" class="dropdown-content">
+                                  <a href="cookiesShop.html">עוגיות</a>
+                                  <a href="cakeShop.html">עוגות</a>
+                                  <a href="packageShop.html">מארזים</a>
+                                </div>
+                            </div>
+            
+                            <a href="about_me.html"><span class="lables aboutMe"><p class="lables">?מי אני</p></span></a>
+                            <a href="mainPage.html"><span class="lables main"><p class="lables">ראשי</p></span></a>
+                            <img id="cookie" src="cookieHeader.jpg" alt="cookie image" width="70px">
+                        </div>
+            
+                        <div class="bar" style="position: fixed;">
+                            <img class="curPointer" id="myBtn" src="login.png"alt= "login symbol" width="50vh" onclick="onclickFunc()"
+                            onload="showUserNameFunc('showUserName')">
+                            <a>
+                                <button class="dispNone" id="logoutBtn" type="button" value="logout" style="width: 15vh;"
+                                onclick="logoutFunc('logoutBtn','showUserName')">התנתק</button>
+                            </a>
+                            <b><p id="showUserName" style="color:whitesmoke;"></p></b>
+                            <!-- Trigger/Open The Modal -->
+                            <!-- The Modal -->
+                            <div id="myModal" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close" onlick="onclickSpan()"></span>
+                                    <form class="loginForm" method="POST">
+                                        <button type="button" value="close" onclick="closeWindow()" style="float:right;"><b>X</b></button><br>
+                                        <h2 style="font-size: 4vh;">התחברות לאתר</h2>
+                                        <input type="text" id="userName" name="userName" placeholder="שם משתמש" style="width: 30vh;  text-align: right; height: 3vh;margin-bottom: 0.8vh;"><br>
+                                        <input type="password" id="pass" name="password" placeholder="סיסמה" style="width: 30vh; text-align: right; height: 3vh;"><br>
+                                        <p>הצג סיסמה
+                                        <input type="checkbox" onclick="hidePassword()">
+                                        </p>
+                                        <br><a id="registerLink">
+                                            <button type="button" value="register"
+                                                onclick="OpenRegisterForm('registerLink')">הרשמה</button>
+                                        </a>
+                                        <a id="loginLink">
+                                            <button type="button" value="login"
+                                                onclick="CheckForm('userName','pass','showUserName')">התחבר
+                                            </button>
+                                        </a>
+                                    </form><br>
+                                    <p class="curPointer" onclick="forgotPass()"
+                                        style="background-color: rgb(116, 63, 116); width: 25vh; text-align: center; display: inline-block;
+                                        font-size: 3vh; width: auto; padding: 0vh 2vh 0.5vh 2vh;">שכחתי סיסמא</p>
+                                </div>
+                            </div>
+                            <script>
+                                // popup window
+                                var modal = document.getElementById("myModal");
+                                var btn = document.getElementById("myBtn");
+                                var span = document.getElementsByClassName("close")[0];
+                                function onclickFunc() {modal.style.display = "block";}
+                                function onclickSpan() {modal.style.display = "none";}
+                                // When the user clicks anywhere outside of the modal, close it
+                                window.onclick = function(event) {
+                                    if (event.target == modal) {
+                                    modal.style.display = "none";
+                                    }
+                                }
+                            </script>
+                            
+                            <a href="wishlistPage.html" style="font-size: 5vh;">❤️</a>
+                            <br><br>
+                            <a href="ShopCartPage.html"><img src="cart.png"alt= "cart symbol" width="50vh"></a>
+                        </div>
+            
+                        <div class="footer" >
+                            <div class="socialMedia">
+                                <a href="https://www.instagram.com/illusion_bakery/"><img src="instegramSymbol.jpeg"
+                                alt= "image of instegram symbol" width="50vh" style="margin-right: 2vh; border: 0.05vh solid black; border-radius: 20%;;" ></a>
+                                <a href="https://www.facebook.com/adi.iluz.5"><img src="facebookSymbol.jpeg"
+                                alt= "image of instegram symbol" width="50vh" style="margin-right: 2vh; border: 0.05vh solid black; border-radius: 20%;"></a>
+                                <a href="https://www.tiktok.com/@illusionbakery"><img src="tiktokSymbol.jpeg"
+                                alt= "image of instegram symbol" width="50vh" style="border: 0.05vh solid black; border-radius: 20%;"></a>
+                            </div>
+            
+                            <a id="mapPage"><span class="footerLable"><p id="mapP" onclick="goToPage('mapPage','mapPage.html')"
+                                onmouseover="changePointer('mapP','pointer');" onmouseout="changePointer('mapP','default');">דרכי הגעה</p></span></a>
+            
+                            <a id="privacyPage"><span class="footerLable"><p id="privacyP" onclick="goToPage('privacyPage','privacyPage.html')"
+                                onmouseover="changePointer('privacyP','pointer');" onmouseout="changePointer('privacyP','default');">מדיניות פרטיות</p></span></a>
+            
+                            <a id="deliveryPage"><span class="footerLable"><p id="deliveryP" onclick="goToPage('deliveryPage','deliveryPage.html')"
+                                onmouseover="changePointer('deliveryP','pointer');" onmouseout="changePointer('deliveryP','default');">מדיניות משלוחים</p></span></a>
+            
+                            <a id="cancelPage"><span class="footerLable"><p  id="cancelP" onclick="goToPage('cancelPage','cancelPage.html')"
+                                onmouseover="changePointer('cancelP','pointer');" onmouseout="changePointer('cancelP','default');">מדיניות ביטולים</p></span></a>
+            
+                            <a id="policyPage"><span class="footerLable"><p id="policyP" onclick="goToPage('policyPage','policyPage.html')"
+                                onmouseover="changePointer('policyP','pointer');" onmouseout="changePointer('policyP','default');">תקנון האתר</p></span></a>
+                        </div>
+            </div>
+            
+        </div>
+
+    </body>
+</html>

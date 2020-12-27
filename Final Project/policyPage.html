@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>policy page</title>
+        <link rel="stylesheet" href="styleSheet.css">
+        <script type = "text/javascript" src="JS_Functions.js"></script>  
+    </head>
+    <body>
+        <div class="grid-container-footer">
+            <div class="line1">
+                <h1>תקנון האתר</h1>
+                <p style="text-align: right;">
+                    <b><u>כללי</u></b><br>
+                        	אתר זה ("האתר") מופעל ע"י חברת "ארבעת המופלאים" ("החברה"), בכתובת אינטרנט זו ומטרתו רכישת מאפים ("המוצר").<br>
+                        	הגלישה באתר כפופה לתנאים המפורטים בתקנון ותנאי שימוש אלו ("התקנון"). אנא קרא את התקנון בקפידה, שכן הגלישה באתר וביצוע פעולות בו מעידים על הסכמתך לתנאים הכלולים בתקנון, והוא מהווה חוזה מחייב בינך לבין החברה.<br>
+                        	האמור בתקנון זה בלשון זכר הוא לשם הנוחות בלבד והתקנון מתייחס לבני שני המינים באופן שווה.<br>
+                    <b><u>רכישת מוצר באתר</u></b><br>
+                        	האתר מאפשר ללקוחות קנייה נוחה, קלה ובטוחה של המוצר באמצעות האינטרנט.<br>
+                        	המחיר המופיע באתר בצמוד לכל מוצר הינו מחיר המוצר העדכני. האתר רשאי לעדכן מעת לעת את מחירי המוצרים המוצעים לרכישה באתר, ללא קשר למועד ביצוע רכישה באתר, וללא צורך בהודעה על כך.<br>
+                        	הרכישה באתר הינה באמצעות כרטיס אשראי או בכל אמצעי תשלום אחר המופיע בעמוד התשלום.<br>
+                        	האתר רשאי בכל עת לשנות את מגוון המוצרים המוצעים לרכישה באתר, להחליפם להמעיט מהם, להוסיף עליהם, וכן לשלול זכות רכישה באתר על פי שיקול דעתו וללא כל הודעה או התראה מוקדמת.<br>
+                    <b><u>דין וסמכות שיפוט</u></b><br>
+                        	פרשנותו ואכיפתו של תקנון זה ו/או כל פעולה או סכסוך הנובע ממנו יעשו בהתאם לדין הישראלי בלבד ולבית המשפט המוסמך באחד מהמחוזות תל אביב-יפו, חיפה, ירושלים או ב"ש תהא מסורה סמכות השיפוט הבלעדית.<br>
+                    <b><u>קניין רוחני</u></b><br>
+                        	כל זכויות הקניין הרוחני באתר מכירות זה הינן רכושו הבלעדי של האתר.<br>
+                        	אין להעתיק, לשכפל, להפיץ, לפרסם או להשתמש בכל דרך אחרת במידע כלשהו מן האתר ו/או מאתר מכירות זה, אלא אם ניתנה הסכמה לכך מראש ובכתב מטעם החברה.<br>
+                    <b><u></u></b>יצירת קשר</u></b><br>
+                        	בכל שאלה ו/או בירור לגבי המוצר, וכן בכל פנייה אחרת בעניין פגיעה בזכות או תוכן פוגע, יש ליצור קשר באמצעות כתובת מייל/ מספר טלפון<br>
+                </p>
+
+            </div>
+
+            <div class="nav" style="z-index: 9999;">
+                <img id="cookie" src="cookieHeader.jpg" alt="cookie image" height="70px" >
+                <a href="ContactPage.html"><span class="contactMe"><p class="lables">צור קשר</p></span></a>
+                <a href="recommendationsPage.html"><span class="customers"><p class="lables">לקוחות מתוקים</p></span></a>
+                <a href="BakeWithMe_Page.html"><span class="bakeWithMe"><p class="lables">אופים איתי</p></span></a>
+                <a href="eventsPage.html"><span class="events"><p class="lables"> אירועים</p></span></a>
+
+                <div class="dropdown">
+                    <p onclick="dropDownList()" class="dropbtn aboutMe">החנות שלי</p>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="cookiesShop.html">עוגיות</a>
+                      <a href="cakeShop.html">עוגות</a>
+                      <a href="packageShop.html">מארזים</a>
+                    </div>
+                </div>
+
+                <a href="about_me.html"><span class="lables aboutMe"><p class="lables">?מי אני</p></span></a>
+                <a href="mainPage.html"><span class="lables main"><p class="lables">ראשי</p></span></a>
+                <img id="cookie" src="cookieHeader.jpg" alt="cookie image" width="70px">
+            </div>
+
+            <div class="bar" style="position: fixed;">
+                <img class="curPointer" id="myBtn" src="login.png"alt= "login symbol" width="50vh" onclick="onclickFunc()"
+                onload="showUserNameFunc('showUserName')">
+                <a>
+                    <button class="dispNone" id="logoutBtn" type="button" value="logout" style="width: 15vh;"
+                    onclick="logoutFunc('logoutBtn','showUserName')">התנתק</button>
+                </a>
+                <b><p id="showUserName" style="color:whitesmoke;"></p></b>
+                <!-- Trigger/Open The Modal -->
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close" onlick="onclickSpan()"></span>
+                        <form class="loginForm" method="POST">
+                            <button type="button" value="close" onclick="closeWindow()" style="float:right;"><b>X</b></button><br>
+                            <h2 style="font-size: 4vh;">התחברות לאתר</h2>
+                            <input type="text" id="userName" name="userName" placeholder="שם משתמש" style="width: 30vh;  text-align: right; height: 3vh;margin-bottom: 0.8vh;"><br>
+                            <input type="password" id="pass" name="password" placeholder="סיסמה" style="width: 30vh; text-align: right; height: 3vh;"><br>
+                            <p>הצג סיסמה
+                            <input type="checkbox" onclick="hidePassword()">
+                            </p>
+                            <br><a id="registerLink">
+                                <button type="button" value="register"
+                                    onclick="OpenRegisterForm('registerLink')">הרשמה</button>
+                            </a>
+                            <a id="loginLink">
+                                <button type="button" value="login"
+                                    onclick="CheckForm('userName','pass','showUserName')">התחבר
+                                </button>
+                            </a>
+                        </form><br>
+                        <p class="curPointer" onclick="forgotPass()"
+                            style="background-color: rgb(116, 63, 116); width: 25vh; text-align: center; display: inline-block;
+                            font-size: 3vh; width: auto; padding: 0vh 2vh 0.5vh 2vh;">שכחתי סיסמא</p>
+                    </div>
+                </div>
+                <script>
+                    // popup window
+                    var modal = document.getElementById("myModal");
+                    var btn = document.getElementById("myBtn");
+                    var span = document.getElementsByClassName("close")[0];
+                    function onclickFunc() {modal.style.display = "block";}
+                    function onclickSpan() {modal.style.display = "none";}
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                        modal.style.display = "none";
+                        }
+                    }
+                </script>
+                
+                <a href="wishlistPage.html" style="font-size: 5vh;">❤️</a>
+                <br><br>
+                <a href="ShopCartPage.html"><img src="cart.png"alt= "cart symbol" width="50vh"></a>
+            </div>
+
+    <div class="footer">
+        <div class="socialMedia">
+            <a href="https://www.instagram.com/illusion_bakery/"><img src="instegramSymbol.jpeg"
+            alt= "image of instegram symbol" width="50vh" style="margin-right: 2vh; border: 0.05vh solid black; border-radius: 20%;;" ></a>
+            <a href="https://www.facebook.com/adi.iluz.5"><img src="facebookSymbol.jpeg"
+            alt= "image of instegram symbol" width="50vh" style="margin-right: 2vh; border: 0.05vh solid black; border-radius: 20%;"></a>
+            <a href="https://www.tiktok.com/@illusionbakery"><img src="tiktokSymbol.jpeg"
+            alt= "image of instegram symbol" width="50vh" style="border: 0.05vh solid black; border-radius: 20%;"></a>
+        </div>
+
+        <a id="mapPage"><span class="footerLable"><p id="mapP" onclick="goToPage('mapPage','mapPage.html')"
+            onmouseover="changePointer('mapP','pointer');" onmouseout="changePointer('mapP','default');">דרכי הגעה</p></span></a>
+
+        <a id="privacyPage"><span class="footerLable"><p id="privacyP" onclick="goToPage('privacyPage','privacyPage.html')"
+            onmouseover="changePointer('privacyP','pointer');" onmouseout="changePointer('privacyP','default');">מדיניות פרטיות</p></span></a>
+
+        <a id="deliveryPage"><span class="footerLable"><p id="deliveryP" onclick="goToPage('deliveryPage','deliveryPage.html')"
+            onmouseover="changePointer('deliveryP','pointer');" onmouseout="changePointer('deliveryP','default');">מדיניות משלוחים</p></span></a>
+
+        <a id="cancelPage"><span class="footerLable"><p  id="cancelP" onclick="goToPage('cancelPage','cancelPage.html')"
+            onmouseover="changePointer('cancelP','pointer');" onmouseout="changePointer('cancelP','default');">מדיניות ביטולים</p></span></a>
+
+        <a id="policyPage"><span class="footerLable"><p id="policyP" onclick="goToPage('policyPage','policyPage.html')"
+            onmouseover="changePointer('policyP','pointer');" onmouseout="changePointer('policyP','default');">תקנון האתר</p></span></a>
+    </div>
+    
+        </div>
+    </body>
+</html>
