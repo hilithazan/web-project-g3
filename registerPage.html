@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <title>register page</title>
+        <link rel="stylesheet" href="styleSheetRegister.css">
+        <script type = "text/javascript" src="JS_Functions.js"></script>  
+        
+    </head>
+    <body>
+        <form class="grid-container" action="/todo" method="POST">
+            <div class="main">
+                    <h1 class="h1" style="font-size: 10vh;">הרשמה</h1>
+                    <h2 class="h2" style="font-size: 5vh"> !אנא מלא/י את כל הפרטים</h2><hr>
+                <p style="width: 400px">
+                    <div>
+
+                        <p class="error" id="firstNameP"></p>
+                        <img id="firstnameVX" src="transperent.png" alt="V/X sign" width="20vh">
+                        <input class="input" type="text" id="firstname" name="firstname" placeholder="שם פרטי" onfocus="focusingContact(this,'yellow')" onblur="focusingContact(this,'white')"
+                        oninput="VXpicName('firstname','firstnameVX','firstNameP')"><br>
+
+                        <p class="error" id="lastNameP"></p>
+                        <img id="lastnameVX" src="transperent.png" alt="V/X sign" width="20vh">
+                        <input class="input" type="text" id="lastName" name="lastName" placeholder="שם משפחה" onfocus="focusingContact(this,'yellow')" onblur="focusingContact(this,'white')"
+                        oninput="VXpicName('lastName','lastnameVX','lastNameP')"> <br>
+
+                        <p class="error" id="emailP"></p>
+                        <img id="emailVX" src="transperent.png" alt="V/X sign" width="20vh">
+                        <input class="input" type="email" id="email" name="email" placeholder="כתובת מייל" onfocus="focusingContact(this,'yellow')" onblur="focusingContact(this,'white')"
+                        oninput="VXpicEmail('email','emailVX','emailP')"><br>
+
+                        <p class="error" id="userNameP"></p>
+                        <img id="userNameVX" src="transperent.png" alt="V/X sign" width="20vh">
+                        <input class="input" type="text" id="userName" name="userName" placeholder="שם משתמש" onfocus="focusingContact(this,'yellow')" onblur="focusingContact(this,'white')"
+                        oninput="VXpicUserName('userName','userNameVX','userNameP')"><br>
+
+                        <p class="error" id="passwordP"></p>
+                        <img id="passwordVX" src="transperent.png" alt="V/X sign" width="20vh">
+                        <input class="input" type="password" id="password" name="password" placeholder="סיסמא" onfocus="focusingContact(this,'yellow')" onblur="focusingContact(this,'white')"
+                        oninput="VXpicPass('password','passwordVX','passwordP')"><br>
+
+                        <p class="error" id="password2P"></p>
+                        <img id="password2VX" src="transperent.png" alt="V/X sign" width="20vh">
+                        <input class="input" type="password" id="password2" name="password2" placeholder="חזור על הסיסמא" onfocus="focusingContact(this,'yellow')" onblur="focusingContact(this,'white')"
+                        oninput="VXpicPass2('password2','password2VX','password2P','password')"><br>
+                        
+                        <a id="submitB">
+                            <button class="sumbitInput" type="button" value="submit" onmouseover="style='cursor:pointer'" 
+                            onclick="checkLoginForm('submitB')">הירשם
+                            </button>
+                        </a>
+
+                        <p>
+                        <a href="mainPage.html" style="font-size: 1.5vw; margin-top: 2vh;"><b>-חזרה לעמוד הראשי-</b></a>
+                        </p>
+                    </div><hr>
+                </p>
+            </div>
+            <div class="footer">
+                <img src="cookieHeader.jpg" width="50vh" alt="image of cookie" style="position: absolute; right: 0%; border-style: solid;">
+                <img src="cookieHeader.jpg" width="50vh" alt="image of cookie;" style="border-style: solid; display: inline-block; padding-left: 0.5vh; padding-right: 0.5vh; padding-top: 0.5vh; padding-bottom: 0.5vh;">
+                <img src="cookieHeader.jpg" width="50vh" alt="image of cookie;" style="border-style: solid; display: inline-block; padding-left: 0.5vh; padding-right: 0.5vh; padding-top: 0.5vh; padding-bottom: 0.5vh;">
+                <img src="cookieHeader.jpg" width="50vh" alt="image of cookie;" style="border-style: solid; display: inline-block; padding-left: 0.5vh; padding-right: 0.5vh; padding-top: 0.5vh; padding-bottom: 0.5vh;">
+                <img src="cookieHeader.jpg" width="50vh" alt="image of cookie" style="position: absolute; left: 0%; border-style: solid;">
+            </div>
+        </form>
+
+    </body>
+    
+</html>

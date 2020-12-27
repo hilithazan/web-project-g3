@@ -1,28 +1,180 @@
 <!doctype html>
 <html>
-    <header>
-        <title></title>
+    <head>
+        <title>Main page</title>
         <link rel="stylesheet" href="styleSheet.css">
+        <script type = "text/javascript" src="JS_Functions.js"></script>  
+    </head>
 
-    </header>
+    <body class="unScroll">
+        <img id="coockie_roll" class="roll" src="cookie_roll1.png" alt="coockie roll pic" width="100vh" height="100vh">
+        <div id="myProgress"><div id="myBar" class="dispBlock" style="text-align: right; padding-right: 5vh;"></div></div>
+        <div class="grid-container-main">
+            
+            <div class="nav" style="z-index: 9999;">
+                <img id="cookie" src="cookieHeader.jpg" alt="cookie image" height="70px" >
+                <a href="ContactPage.html"><span class="contactMe"><p class="lables">צור קשר</p></span></a>
+                <a href="recommendationsPage.html"><span class="customers"><p class="lables">לקוחות מתוקים</p></span></a>
+                <a href="BakeWithMe_Page.html"><span class="bakeWithMe"><p class="lables">אופים איתי</p></span></a>
+                <a href="eventsPage.html"><span class="events"><p class="lables"> אירועים</p></span></a>
 
-    <body>
-        <div class="grid-container1">
-            <div class="nav"> nav</div>
-            <div class="bar"> bar</div>
-            <div class="header"> header</div>
-            <div class="line1"> line1</div>
-            <div class="line2"> line2</div>
-            <div class="line3"> line3</div>
-            <div class="line4"> line4</div>
-            <div class="line5"> line5</div>
-            <div class="footer"> footer</div>
+                <div class="dropdown">
+                    <p onclick="dropDownList()" class="dropbtn aboutMe">החנות שלי</p>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="cookiesShop.html">עוגיות</a>
+                      <a href="cakeShop.html">עוגות</a>
+                      <a href="packageShop.html">מארזים</a>
+                    </div>
+                </div>
 
+                <a href="about_me.html"><span class="lables aboutMe"><p class="lables">?מי אני</p></span></a>
+                <a href="mainPage.html"><span class="lables main"><p class="lables">ראשי</p></span></a>
+                <img id="cookie" src="cookieHeader.jpg" alt="cookie image" width="70px">
+            </div>
 
+            <div class="bar" style="position: fixed;">
+                <img class="curPointer" id="myBtn" src="login.png"alt= "login symbol" width="50vh" onclick="onclickFunc()"
+                onload="showUserNameFunc('showUserName')">
+                <a>
+                    <button class="dispNone" id="logoutBtn" type="button" value="logout" style="width: 15vh;"
+                    onclick="logoutFunc('logoutBtn','showUserName')">התנתק</button>
+                </a>
+                <b><p id="showUserName" style="color:whitesmoke;"></p></b>
+                <!-- Trigger/Open The Modal -->
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close" onlick="onclickSpan()"></span>
+                        <form class="loginForm" method="POST">
+                            <button type="button" value="close" onclick="closeWindow()" style="float:right;"><b>X</b></button><br>
+                            <h2 style="font-size: 4vh;">התחברות לאתר</h2>
+                            <input type="text" id="userName" name="userName" placeholder="שם משתמש" style="width: 30vh;  text-align: right; height: 3vh;margin-bottom: 0.8vh;"><br>
+                            <input type="password" id="pass" name="password" placeholder="סיסמה" style="width: 30vh; text-align: right; height: 3vh;"><br>
+                            <p>הצג סיסמה
+                            <input type="checkbox" onclick="hidePassword()">
+                            </p>
+                            <br><a id="registerLink">
+                                <button type="button" value="register"
+                                    onclick="OpenRegisterForm('registerLink')">הרשמה</button>
+                            </a>
+                            <a id="loginLink">
+                                <button type="button" value="login"
+                                    onclick="CheckForm('userName','pass','showUserName')">התחבר
+                                </button>
+                            </a>
+                        </form><br>
+                        <p class="curPointer" onclick="forgotPass()"
+                            style="background-color: rgb(116, 63, 116); width: 25vh; text-align: center; display: inline-block;
+                            font-size: 3vh; width: auto; padding: 0vh 2vh 0.5vh 2vh;">שכחתי סיסמא</p>
+                    </div>
+                </div>
+                <script>
+                    // popup window
+                    var modal = document.getElementById("myModal");
+                    var btn = document.getElementById("myBtn");
+                    var span = document.getElementsByClassName("close")[0];
+                    function onclickFunc() {modal.style.display = "block";}
+                    function onclickSpan() {modal.style.display = "none";}
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                        modal.style.display = "none";
+                        }
+                    }
+                </script>
+                
+                <a href="wishlistPage.html" style="font-size: 5vh;">❤️</a>
+                <br><br>
+                <a href="ShopCartPage.html"><img src="cart.png"alt= "cart symbol" width="50vh"></a>
+            </div>
 
+            <div class="footer" >
+                <div class="socialMedia">
+                    <a href="https://www.instagram.com/illusion_bakery/"><img src="instegramSymbol.jpeg"
+                    alt= "image of instegram symbol" width="50vh" style="margin-right: 2vh; border: 0.05vh solid black; border-radius: 20%;;" ></a>
+                    <a href="https://www.facebook.com/adi.iluz.5"><img src="facebookSymbol.jpeg"
+                    alt= "image of instegram symbol" width="50vh" style="margin-right: 2vh; border: 0.05vh solid black; border-radius: 20%;"></a>
+                    <a href="https://www.tiktok.com/@illusionbakery"><img src="tiktokSymbol.jpeg"
+                    alt= "image of instegram symbol" width="50vh" style="border: 0.05vh solid black; border-radius: 20%;"></a>
+                </div>
 
+                <a id="mapPage"><span class="footerLable"><p id="mapP" onclick="goToPage('mapPage','mapPage.html')"
+                    onmouseover="changePointer('mapP','pointer');" onmouseout="changePointer('mapP','default');">דרכי הגעה</p></span></a>
 
+                <a id="privacyPage"><span class="footerLable"><p id="privacyP" onclick="goToPage('privacyPage','privacyPage.html')"
+                    onmouseover="changePointer('privacyP','pointer');" onmouseout="changePointer('privacyP','default');">מדיניות פרטיות</p></span></a>
+
+                <a id="deliveryPage"><span class="footerLable"><p id="deliveryP" onclick="goToPage('deliveryPage','deliveryPage.html')"
+                    onmouseover="changePointer('deliveryP','pointer');" onmouseout="changePointer('deliveryP','default');">מדיניות משלוחים</p></span></a>
+
+                <a id="cancelPage"><span class="footerLable"><p  id="cancelP" onclick="goToPage('cancelPage','cancelPage.html')"
+                    onmouseover="changePointer('cancelP','pointer');" onmouseout="changePointer('cancelP','default');">מדיניות ביטולים</p></span></a>
+
+                <a id="policyPage"><span class="footerLable"><p id="policyP" onclick="goToPage('policyPage','policyPage.html')"
+                    onmouseover="changePointer('policyP','pointer');" onmouseout="changePointer('policyP','default');">תקנון האתר</p></span></a>
+            </div>
+
+            <div class="header" style="font-size: 3.5vh; background-color: rgb(231, 202, 235); border-bottom: 5px solid  rgb(195, 3, 138);">
+                <h1 class="glow">ברוכים הבאים</h1>
+                <img src="logo.png" alt="illusion bakery logo" width="230vh" style="border-radius: 50%; border: 5px solid rgb(195, 3, 138);">
+                <br>
+            </div>
+
+            <div class="line1" style="width: 30vhpx; margin-left: 70vh;">
+                <a href="about_me.html" style="text-align: center;"><h1>?מי אני</h1></a>
+                <p>.אני עדי אילוז, בת 23</p>
+                <p>.התחלתי עם האפייה בתמימות לפני שנה וחצי מהאינסטגרם. בחיים לא חשבתי שאתעסק במטבח</p>
+                <p>...באינסטגרם ראיתי סרטונים למתכונים קלים וכשהתחלתי לא יכולתי להפסיק! ומשם הכל התחיל</p>
+                <p>.העסק פתוח כבר כ-9 חודשים והולך וגדל מיום ליום</p>
+                <p>;) אני מזמינה אתכם לבוא ולהתאהב גם. נתראה</p>
+            </div>
+            <div class="line1" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <img src="mainPhoto.jpeg" alt="photo of adi" width="350vw" style="border-radius: 50%; position:relative; left:-60vh; z-index: -1;">
+            </div>
+        
+            <div class="line2" style="background-color: rgb(231, 202, 235); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <h1 style="color: black;">החנות שלי</h1>
+                <a href="packageShop.html" class="mainShop">מארזים<br>
+                    <img src="package_white_pretzel.JPG" alt="photo of adi" width="100vw" style="border-radius: 50%; position: relative;">
+                </a>
+                <a href="cakeShop.html" class="mainShop">עוגות<br>
+                    <img src="pinkCake.png" alt="photo of adi" width="100vw" style="border-radius: 50%; position: relative;">
+                </a>
+                <a href="cookiesShop.html" class="mainShop">עוגיות<br>
+                    <img src="tomJohn.jpeg" alt="photo of adi" width="100vw" style="border-radius: 50%; position: relative;">
+                </a>
+            </div>
+
+            <div class="line3" >
+                <a href="eventsPage.html"><h1>אירועים</h1></a>
+                <p style="font-size: 1.5vw;">.תנו לי לרגש אתכם באירוע שלכם</p>
+                <p style="font-size: 1.5vw;">! כנסו להתרשם ולקבוע אירוע</p>
+            </div>
+            <div class="line3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <img src="event_pink.jpg" alt="photo of event" width="350vw" style="border-radius: 10%; position:relative; right:-89vh; z-index: -1;">
+                <img src="event_wedding.jpg" alt="photo of event" width="350vw" style="border-radius: 10%; position:relative; left:-89vh; z-index: -1;">
+            </div>
+
+            <div class="line4" style="background-color: rgb(231, 202, 235); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); background-image: url('chocolate_image.jpg');"><br><br><br>
+                <a href="BakeWithMe_Page.html"><h1>אופים איתי</h1></a>
+                <div style="color: black; font-size: 1.5vw;">
+                    <img src="bake_with_me_image.jfif" alt="photo of baking" width="170vw" style="border-color: brown; border-style: groove; border-radius: 5%;">
+                    <div>בואו להתאהב בחווית האפייה יחד איתי</div>
+                </div>
+            </div>
+
+            <div class="line5" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <a href="recommendationsPage.html"><h1>לקוחות מתוקים</h1></a>
+                <p style="font-size: 1.5vw; color: black;">?רוצים לשמוע על החוויה של הלקוחות שלי</p>
+                <p style="font-size: 1.5vw; color: black;">...קפצו פנימה</p>
+                <img src="customer_static_benel.jfif" alt="photo of customer1" width="198vw" title="סטטיק ובן אל" style="border-radius: 10%; position: relative; display: inline-flex; border-style: solid; border-color: rgb(195, 3, 138);">
+                <img src="customer_asi_rotem.jpg" alt="photo of customer2" width="280vw" title="אסי עזר ורותם סלע" style="border-radius: 10%; display: inline-flex; border-style: solid; border-color: rgb(195, 3, 138);">
+                <img src="customer_bibi.jfif" alt="photo of customer2" width="268vw" title="ביבי ושרה" style="border-radius: 10%; display: inline-flex; border-style: solid; border-color: rgb(195, 3, 138);">
+                <img src="customer_ana.jpg" alt="photo of customer2" width="206vw" title="אנה זק" style="border-radius: 10%; display: inline-flex; border-style: solid; border-color: rgb(195, 3, 138);">
+                <img src="customer_noa_mergi.jpg" alt="photo of customer2" width="177vw" title="נועה קירל ומרגי" style="border-radius: 10%; display: inline-flex; border-style: solid; border-color: rgb(195, 3, 138);">
+            </div>
+            
         </div>
-
     </body>
 </html>

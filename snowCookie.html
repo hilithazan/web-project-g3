@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product</title>
+    <link rel="stylesheet" href="styleSheet.css">
+</head>
+<body>
+    <div class="grid-container-product">
+        <div class="boxL"><br>
+            <div><img class="productImage" src="snow.jpeg" alt= "the image is not avilble" width=350vh></div></div>
+        <div class="boxR"><h1>סנואו</h1><br>מילוי: שוקולד לבן <br><br><br><br>מחיר: 13 שח<br><br><h5>מד שחיתות:</h5><br>
+            <img class="cookieScale" id="tasty1" src="tastyScale.png" width="30vh" alt="This is an image of 1 cookie"> <br><p><h5>Wishlist</h5></p>
+            <img src="star.png" alt= "the image is not avilble" width=40vh>
+        </div>
+
+        <div class="nav" style="z-index: 9999;">
+            <img id="cookie" src="cookieHeader.jpg" alt="cookie image" height="70px" >
+            <a href="ContactPage.html"><span class="contactMe"><p class="lables">צור קשר</p></span></a>
+            <a href="recommendationsPage.html"><span class="customers"><p class="lables">לקוחות מתוקים</p></span></a>
+            <a href="BakeWithMe_Page.html"><span class="bakeWithMe"><p class="lables">אופים איתי</p></span></a>
+            <a href="eventsPage.html"><span class="events"><p class="lables"> אירועים</p></span></a>
+
+            <div class="dropdown">
+                <p onclick="dropDownList()" class="dropbtn aboutMe">החנות שלי</p>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="cookiesShop.html">עוגיות</a>
+                  <a href="cakeShop.html">עוגות</a>
+                  <a href="packageShop.html">מארזים</a>
+                </div>
+            </div>
+
+            <a href="about_me.html"><span class="lables aboutMe"><p class="lables">?מי אני</p></span></a>
+            <a href="mainPage.html"><span class="lables main"><p class="lables">ראשי</p></span></a>
+            <img id="cookie" src="cookieHeader.jpg" alt="cookie image" width="70px">
+        </div>
+
+        <div class="bar" style="position: fixed;">
+            <img class="curPointer" id="myBtn" src="login.png"alt= "login symbol" width="50vh" onclick="onclickFunc()"
+            onload="showUserNameFunc('showUserName')">
+            <a>
+                <button class="dispNone" id="logoutBtn" type="button" value="logout" style="width: 15vh;"
+                onclick="logoutFunc('logoutBtn','showUserName')">התנתק</button>
+            </a>
+            <b><p id="showUserName" style="color:whitesmoke;"></p></b>
+            <!-- Trigger/Open The Modal -->
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close" onlick="onclickSpan()"></span>
+                    <form class="loginForm" method="POST">
+                        <button type="button" value="close" onclick="closeWindow()" style="float:right;"><b>X</b></button><br>
+                        <h2 style="font-size: 4vh;">התחברות לאתר</h2>
+                        <input type="text" id="userName" name="userName" placeholder="שם משתמש" style="width: 30vh;  text-align: right; height: 3vh;margin-bottom: 0.8vh;"><br>
+                        <input type="password" id="pass" name="password" placeholder="סיסמה" style="width: 30vh; text-align: right; height: 3vh;"><br>
+                        <p>הצג סיסמה
+                        <input type="checkbox" onclick="hidePassword()">
+                        </p>
+                        <br><a id="registerLink">
+                            <button type="button" value="register"
+                                onclick="OpenRegisterForm('registerLink')">הרשמה</button>
+                        </a>
+                        <a id="loginLink">
+                            <button type="button" value="login"
+                                onclick="CheckForm('userName','pass','showUserName')">התחבר
+                            </button>
+                        </a>
+                    </form><br>
+                    <p class="curPointer" onclick="forgotPass()"
+                        style="background-color: rgb(116, 63, 116); width: 25vh; text-align: center; display: inline-block;
+                        font-size: 3vh; width: auto; padding: 0vh 2vh 0.5vh 2vh;">שכחתי סיסמא</p>
+                </div>
+            </div>
+            <script>
+                // popup window
+                var modal = document.getElementById("myModal");
+                var btn = document.getElementById("myBtn");
+                var span = document.getElementsByClassName("close")[0];
+                function onclickFunc() {modal.style.display = "block";}
+                function onclickSpan() {modal.style.display = "none";}
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                    modal.style.display = "none";
+                    }
+                }
+            </script>
+            
+            <a href="wishlistPage.html" style="font-size: 5vh;">❤️</a>
+            <br><br>
+            <a href="ShopCartPage.html"><img src="cart.png"alt= "cart symbol" width="50vh"></a>
+        </div>
+
+        <div class="footer" >
+            <div class="socialMedia">
+                <a href="https://www.instagram.com/illusion_bakery/"><img src="instegramSymbol.jpeg"
+                alt= "image of instegram symbol" width="50vh" style="margin-right: 2vh; border: 0.05vh solid black; border-radius: 20%;;" ></a>
+                <a href="https://www.facebook.com/adi.iluz.5"><img src="facebookSymbol.jpeg"
+                alt= "image of instegram symbol" width="50vh" style="margin-right: 2vh; border: 0.05vh solid black; border-radius: 20%;"></a>
+                <a href="https://www.tiktok.com/@illusionbakery"><img src="tiktokSymbol.jpeg"
+                alt= "image of instegram symbol" width="50vh" style="border: 0.05vh solid black; border-radius: 20%;"></a>
+            </div>
+
+            <a id="mapPage"><span class="footerLable"><p id="mapP" onclick="goToPage('mapPage','mapPage.html')"
+                onmouseover="changePointer('mapP','pointer');" onmouseout="changePointer('mapP','default');">דרכי הגעה</p></span></a>
+
+            <a id="privacyPage"><span class="footerLable"><p id="privacyP" onclick="goToPage('privacyPage','privacyPage.html')"
+                onmouseover="changePointer('privacyP','pointer');" onmouseout="changePointer('privacyP','default');">מדיניות פרטיות</p></span></a>
+
+            <a id="deliveryPage"><span class="footerLable"><p id="deliveryP" onclick="goToPage('deliveryPage','deliveryPage.html')"
+                onmouseover="changePointer('deliveryP','pointer');" onmouseout="changePointer('deliveryP','default');">מדיניות משלוחים</p></span></a>
+
+            <a id="cancelPage"><span class="footerLable"><p  id="cancelP" onclick="goToPage('cancelPage','cancelPage.html')"
+                onmouseover="changePointer('cancelP','pointer');" onmouseout="changePointer('cancelP','default');">מדיניות ביטולים</p></span></a>
+
+            <a id="policyPage"><span class="footerLable"><p id="policyP" onclick="goToPage('policyPage','policyPage.html')"
+                onmouseover="changePointer('policyP','pointer');" onmouseout="changePointer('policyP','default');">תקנון האתר</p></span></a>
+        </div>
+
+        
+    </div>
+</body>
+</html>

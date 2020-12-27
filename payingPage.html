@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <title>תשלום</title>
+        <link rel="stylesheet" href="styleSheet.css">
+        <script type = "text/javascript" src="JS_Functions.js"></script>  
+        <script></script>
+    </head>
+
+    <body  onload="showTotalAmount()">
+        <div class="grid-container">
+            <div class="header" style="line-height: 0vh; padding: 1vh 0vh 1vh 0vh;">
+                <p id="dateTime"></p>
+                <p id="header" style="font-size: 80px; line-height: 0px; -webkit-text-stroke: 0.08vh purple;">...רק עוד רגע וסיימנו</p>
+                <h3 id="showingAmount"></h3>
+
+            </div><hr>
+            <div>
+                <form id="payingForm" action="/todo" method="POST">
+                    <div class="FormDetails">
+                        <p style="color: black; font-size: 3vh; margin: 1vh;"><b>פרטי המשלם</b></p> <!-- Personal Details of the Contactor-->
+                        <!--first name-->
+                        <label for=PrivateName>:שם פרטי</label><br>
+                        <input id="privateName" class="payInput" onblur="checkName('privateName')" type="text" style="text-align: center;"><br>
+                        <!--last name-->
+                        <label for=LastName>:שם משפחה</label><br>
+                        <input id="surename" class="payInput" onblur="checkName('surename')" type="text" style="text-align: center;"><br>
+                        <!--id-->
+                        <label for=ID>:תעודת זהות</label><br>
+                        <input id="buyerID" class="payInput" onblur="checkIDBuyer('buyerID')" style="text-align: center;" type="text"><br><br>
+
+                        <b for=Payment style="display: inline">:אמצעי תשלום</b><br>
+                        
+                        <!--payment method - radio-->
+                        <div style = "direction: rtl;">
+                            <input type="radio" id="cash" name="paymentOpt" onclick="chooseCash('dispNone','dispBlock')">
+                            <label for="cash">מזומן</label> <br>
+                            <input type="radio" id="visa" name="paymentOpt" onclick="chooseCash('dispBlock','dispNone')">
+                            <label for="visa">ויזה</label> <br>
+                            <input type="radio" id="mastercard" name="paymentOpt" onclick="chooseCash('dispBlock','dispNone')">
+                            <label for="mastercard">מאסטרקארד</label> <br><br>
+                        </div>
+                        <div id="creditCardInputs">
+                            <!--card number-->
+                            <label id="creditCardNum" for="creditNumber">:מספר כרטיס אשראי</label><br>
+                            <input id='creditInput' class="payInput" onblur="checkCreditNum('creditInput')" style="text-align: center;" type="text"><br>
+                            <!--CVV-->
+                            <label for="CVV" title="שלוש ספרות אחרונות בגב הכרטיס">:CVV</label><br>
+                            <input id='creditCardCVVInput' class="payInput" onblur="checkCVV('creditCardCVVInput')" style="width: 5%; text-align: center;" type="text"><br><br>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="FormContact">
+                        <header style="color: black; font-size: 3vh; margin: 1vh;"><b>קבלת אישור תשלום</b></header><br> <!-- Contact Details of the Contactor-->
+                        <!--Email-->
+                        <label for=Email>:כתובת מייל</label><br>
+                        <input id='userEmail' class="payInput" onblur="checkEmail('userEmail')" type="email" name="Email" style="text-align: center;"><br>
+                        <!--Phone-->
+                        <label for=Phone>:טלפון</label><br>
+                        <input id="Phone" class="payInput" type="tel" onblur="checkPhone(id)" name="Phone" style="text-align: center;"><br>
+                    </div>
+                    <hr>     
+                    <div><br>
+                        <label for=Email>אני מאשר שקראתי את תקנון האתר ואני מסכים לתנאי השימוש </label>
+                        <input id="termsButton" type="checkbox">
+                        <p id="submit"></p>
+                        <button class="buttonPay" type="button" onclick="submitPayment()">בצע תשלום</button><br><br>
+                        <a href="ShopCartPage.html" id="cartButton" style="font-size: 2.5vh;"
+                        onmouseover="overCartBigger(id)" onmouseout="outCartSmaller(id)"><b>-חזרה לעגלת הקניות-</b></a><br><br><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    </html>
